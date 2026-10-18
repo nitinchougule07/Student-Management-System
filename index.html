@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">🎓</span><div><h1>StudentHub</h1><p>Student Management System</p></div></div>
+    <span class="live-badge">● Ready to use</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">STUDENT ADMINISTRATION</p>
+        <h2>Manage your students<br><span>in one place.</span></h2>
+        <p class="hero-copy">Add student details, search records, and keep your class list organised.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">📚</div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card"><span class="stat-icon purple">👥</span><div><p>Total Students</p><strong id="totalCount">0</strong></div></article>
+      <article class="stat-card"><span class="stat-icon green">📘</span><div><p>Courses</p><strong id="courseCount">0</strong></div></article>
+      <article class="stat-card"><span class="stat-icon orange">✨</span><div><p>Recently Added</p><strong id="recentCount">0</strong></div></article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading"><div><p class="eyebrow">STUDENT RECORDS</p><h3>Add a student</h3></div></div>
+      <form id="studentForm">
+        <div class="form-grid">
+          <label>Full name<input id="studentName" type="text" placeholder="e.g. Asha Patil" required maxlength="60"></label>
+          <label>Roll number<input id="rollNumber" type="text" placeholder="e.g. BCA001" required maxlength="20"></label>
+          <label>Email address<input id="email" type="email" placeholder="student@example.com" required></label>
+          <label>Course<select id="course" required><option value="">Choose course</option><option>BCA</option><option>BBA</option><option>BCS</option><option>BA</option><option>B.Com</option><option>Other</option></select></label>
+        </div>
+        <button class="primary-btn" type="submit">＋ Add Student</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="records-heading"><div><p class="eyebrow">YOUR CLASS</p><h3>Student directory</h3></div><span class="count-pill" id="recordLabel">0 records</span></div>
+      <div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Search by name, roll number, email or course..."></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>STUDENT</th><th>ROLL NO.</th><th>COURSE</th><th>EMAIL</th><th>ACTION</th></tr></thead>
+          <tbody id="studentTable"></tbody>
+        </table>
+        <div class="empty-state" id="emptyState"><span>🗂️</span><h4>No students yet</h4><p>Add your first student using the form above.</p></div>
+      </div>
+    </section>
+    <footer>Made with <span>♥</span> using HTML, CSS & JavaScript · Data stays in this browser</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
